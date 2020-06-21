@@ -24,12 +24,14 @@ public class Main extends Application {
         //Menu
         Stage menuStage = new Stage();
         windowMenu = menuStage;
-        Button button = new Button("Iniciar mierda");
-        button.setOnAction(event -> window.setScene(scene1));
-        Button buttonIniciar = new Button("Ir a segunda mierda");
-        buttonIniciar.setOnAction(event -> window.setScene(scene2));
+        Button buttonIniciar = new Button("Iniciar mierda");
+        buttonIniciar.setOnAction(event -> window.setScene(scene1));
+        Button button1 = new Button("Ir a primera mierda");
+        button1.setOnAction(event -> window.setScene(scene1));
+        Button button2 = new Button("Ir a segunda mierda");
+        button2.setOnAction(event -> window.setScene(scene2));
         VBox layoutMenu = new VBox(10);
-        layoutMenu.getChildren().addAll(button,buttonIniciar);
+        layoutMenu.getChildren().addAll(buttonIniciar,button1,button2);
         sceneMenu = new Scene(layoutMenu,200,100);
         windowMenu.setTitle("Menu");
         windowMenu.setX(70);
