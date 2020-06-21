@@ -31,15 +31,18 @@ public class Main extends Application {
         VBox layoutMenu = new VBox(10);
         layoutMenu.getChildren().addAll(button,buttonIniciar);
         sceneMenu = new Scene(layoutMenu,200,100);
+        windowMenu.setTitle("Menu");
+        windowMenu.setX(70);
+        windowMenu.setY(85);
         windowMenu.setScene(sceneMenu);
         //windowMenu.show();
 
         //principal
         //Button buttonIniciar = new Button("Iniciar mierda");
         //buttonIniciar.setOnAction(event -> window.setScene(scene1));
-        Image imageInicio = new Image(getClass().getResourceAsStream("images/Imagen1.png"));
+        Image imageInicio = new Image(getClass().getResourceAsStream("images/imagenInicio.png"));
         ImageView imageViewInicio = new ImageView(imageInicio);
-        imageViewInicio.setFitHeight(400);
+        imageViewInicio.setFitHeight(450);
         imageViewInicio.setFitWidth(800);
         VBox layoutInicio = new VBox(20);
         layoutInicio.getChildren().addAll(imageViewInicio);
@@ -92,6 +95,8 @@ public class Main extends Application {
 
         window.setScene(sceneInicio);
         window.setTitle("Mierda esta :)");
+        window.setY(85);
+        window.setX(275);
         window.show();
         windowMenu.show();
         /*Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
