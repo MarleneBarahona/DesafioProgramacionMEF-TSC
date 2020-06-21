@@ -15,37 +15,68 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     Stage window;
-    Scene scene1, scene2;
+    Scene sceneInicio, scene1, scene2, scene3;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         window = primaryStage;
 
+        //principal
+        Button buttonIniciar = new Button("Iniciar mierda");
+        buttonIniciar.setOnAction(event -> window.setScene(scene1));
+        Image imageInicio = new Image(getClass().getResourceAsStream("images/Imagen1.png"));
+        ImageView imageViewInicio = new ImageView(imageInicio);
+        imageViewInicio.setFitHeight(400);
+        imageViewInicio.setFitWidth(800);
+        VBox layoutInicio = new VBox(20);
+        layoutInicio.getChildren().addAll(imageViewInicio,buttonIniciar);
+        sceneInicio = new Scene(layoutInicio, 800, 450);
+
         //ventana 1
         Label label1 = new Label("Primera mierda");
-        Button button1 = new Button("Siguiente mierda");
-        button1.setOnAction(event -> window.setScene(scene2));
-        Image image1 = new Image(getClass().getResourceAsStream("idk.png"));
+        Button buttonAnt1 = new Button("Anterior mierda");
+        buttonAnt1.setOnAction(event -> window.setScene(sceneInicio));
+        Button buttonSig1 = new Button("Siguiente mierda");
+        buttonSig1.setOnAction(event -> window.setScene(scene2));
+        Image image1 = new Image(getClass().getResourceAsStream("images/idk.png"));
         ImageView imageView1 = new ImageView(image1);
         imageView1.setFitHeight(200);
         imageView1.setFitWidth(450);
         VBox layout1 = new VBox(20);
-        layout1.getChildren().addAll(label1,button1,imageView1);
-        scene1 = new Scene(layout1, 600, 300);
+        layout1.getChildren().addAll(label1,imageView1,buttonAnt1,buttonSig1);
+        scene1 = new Scene(layout1, 800, 450);
 
         //ventana 2
         Label label2 = new Label("Segunda mierda");
-        Button button2 = new Button("Anterior mierda");
-        button2.setOnAction(event -> window.setScene(scene1));
-        Image image2 = new Image(getClass().getResourceAsStream("idk.png"));
-        ImageView imageView2 = new ImageView(image1);
+        Button buttonAnt2 = new Button("Anterior mierda");
+        buttonAnt2.setOnAction(event -> window.setScene(scene1));
+        Button buttonSig2 = new Button("Siguiente mierda");
+        buttonSig2.setOnAction(event -> window.setScene(scene3));
+        Image image2 = new Image(getClass().getResourceAsStream("images/idk.png"));
+        ImageView imageView2 = new ImageView(image2);
         imageView2.setFitHeight(200);
         imageView2.setFitWidth(450);
         VBox layout2 = new VBox(20);
-        layout2.getChildren().addAll(label2, button2,imageView2);
-        scene2 = new Scene(layout2, 600, 300);
+        layout2.getChildren().addAll(label2,imageView2,buttonAnt2,buttonSig2);
+        scene2 = new Scene(layout2, 800, 450);
 
-        window.setScene(scene1);
+        //ventana 3
+        Label label3 = new Label("Tercer mierda");
+        Button buttonAnt3 = new Button("Anterior mierda");
+        buttonAnt3.setOnAction(event -> window.setScene(scene1));
+        Button volverInicio = new Button("Volver a Inicio mierda");
+        volverInicio.setOnAction(event -> window.setScene(sceneInicio));
+        //Button buttonSig3 = new Button("Siguiente mierda");
+        //buttonSig3.setOnAction(event -> window.setScene(scene3));
+        Image image3 = new Image(getClass().getResourceAsStream("images/idk.png"));
+        ImageView imageView3 = new ImageView(image3);
+        imageView3.setFitHeight(200);
+        imageView3.setFitWidth(450);
+        VBox layout3 = new VBox(20);
+        layout3.getChildren().addAll(label3,imageView3,buttonAnt3,volverInicio);
+        scene3 = new Scene(layout3, 800, 450);
+
+        window.setScene(sceneInicio);
         window.setTitle("Mierda esta :)");
         window.show();
 
