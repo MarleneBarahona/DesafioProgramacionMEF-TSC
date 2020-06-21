@@ -14,22 +14,36 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    Stage window;
-    Scene sceneInicio, scene1, scene2, scene3;
+    Stage window, windowMenu;
+    Scene sceneInicio, sceneMenu, scene1, scene2, scene3;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         window = primaryStage;
 
+        //Menu
+        Stage menuStage = new Stage();
+        windowMenu = menuStage;
+        Button button = new Button("Iniciar mierda");
+        button.setOnAction(event -> window.setScene(scene1));
+        Button buttonIniciar = new Button("Ir a segunda mierda");
+        buttonIniciar.setOnAction(event -> window.setScene(scene2));
+        VBox layoutMenu = new VBox(10);
+        layoutMenu.getChildren().addAll(button,buttonIniciar);
+        sceneMenu = new Scene(layoutMenu,200,100);
+        windowMenu.setScene(sceneMenu);
+        //windowMenu.show();
+
         //principal
-        Button buttonIniciar = new Button("Iniciar mierda");
-        buttonIniciar.setOnAction(event -> window.setScene(scene1));
+        //Button buttonIniciar = new Button("Iniciar mierda");
+        //buttonIniciar.setOnAction(event -> window.setScene(scene1));
         Image imageInicio = new Image(getClass().getResourceAsStream("images/Imagen1.png"));
         ImageView imageViewInicio = new ImageView(imageInicio);
         imageViewInicio.setFitHeight(400);
         imageViewInicio.setFitWidth(800);
         VBox layoutInicio = new VBox(20);
-        layoutInicio.getChildren().addAll(imageViewInicio,buttonIniciar);
+        layoutInicio.getChildren().addAll(imageViewInicio);
+        //layoutInicio.getChildren().addAll(imageViewInicio,buttonIniciar);
         sceneInicio = new Scene(layoutInicio, 800, 450);
 
         //ventana 1
@@ -79,7 +93,7 @@ public class Main extends Application {
         window.setScene(sceneInicio);
         window.setTitle("Mierda esta :)");
         window.show();
-
+        windowMenu.show();
         /*Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
