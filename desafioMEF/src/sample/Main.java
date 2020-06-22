@@ -2,6 +2,7 @@ package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,7 +16,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     Stage window, windowMenu;
-    Scene sceneInicio, sceneMenu, scene1, scene2, scene3;
+    Scene sceneInicio, sceneMenu, scene1, scene2, scene3, scene4, scene5;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -33,9 +34,10 @@ public class Main extends Application {
         Button button3 = new Button("Modelo");
         button3.setOnAction(event -> window.setScene(scene3));
         Button button4 = new Button("MEF");
-        button4.setOnAction(event -> window.setScene(scene2));
+        button4.setOnAction(event -> window.setScene(scene4));
         VBox layoutMenu = new VBox(10);
         layoutMenu.getChildren().addAll(buttonIniciar,button1,button2,button3,button4);
+        layoutMenu.setPadding(new Insets(20,20,10,20));
         sceneMenu = new Scene(layoutMenu,200,300);
         windowMenu.setTitle("Menu");
         windowMenu.setX(70);
@@ -86,18 +88,34 @@ public class Main extends Application {
         //ventana 3
         Label label3 = new Label("Modelo");
         Button buttonAnt3 = new Button("Anterior");
-        buttonAnt3.setOnAction(event -> window.setScene(scene1));
-        Button volverInicio = new Button("Volver Inicio");
-        volverInicio.setOnAction(event -> window.setScene(sceneInicio));
-        //Button buttonSig3 = new Button("Siguiente mierda");
-        //buttonSig3.setOnAction(event -> window.setScene(scene3));
-        Image image3 = new Image(getClass().getResourceAsStream("images/modelo.png"));
+        buttonAnt3.setOnAction(event -> window.setScene(scene2));
+        //Button volverInicio = new Button("Volver Inicio");
+        //volverInicio.setOnAction(event -> window.setScene(sceneInicio));
+        Button buttonSig3 = new Button("Siguiente");
+        buttonSig3.setOnAction(event -> window.setScene(scene4));
+        Image image3 = new Image(getClass().getResourceAsStream("images/Modelo.png"));
         ImageView imageView3 = new ImageView(image3);
         imageView3.setFitHeight(400);
         imageView3.setFitWidth(750);
         VBox layout3 = new VBox(20);
-        layout3.getChildren().addAll(label3,imageView3,buttonAnt3,volverInicio);
+        layout3.getChildren().addAll(label3,imageView3,buttonAnt3,buttonSig3);
         scene3 = new Scene(layout3, 800, 500);
+
+        //ventana 4
+        Label label4 = new Label("MEF");
+        Button buttonAnt4 = new Button("Anterior");
+        buttonAnt3.setOnAction(event -> window.setScene(scene3));
+        //Button volverInicio = new Button("Volver Inicio");
+        //volverInicio.setOnAction(event -> window.setScene(sceneInicio));
+        //Button buttonSig3 = new Button("Siguiente mierda");
+        //buttonSig3.setOnAction(event -> window.setScene(scene3));
+        Image image4 = new Image(getClass().getResourceAsStream("images/MEF.png"));
+        ImageView imageView4 = new ImageView(image4);
+        imageView4.setFitHeight(400);
+        imageView4.setFitWidth(750);
+        VBox layout4 = new VBox(20);
+        layout4.getChildren().addAll(label4,imageView4,buttonAnt4);
+        scene4 = new Scene(layout4, 800, 500);
 
         window.setScene(sceneInicio);
         window.setTitle("Mierda esta :)");
