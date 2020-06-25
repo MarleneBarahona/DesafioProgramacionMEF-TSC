@@ -3,6 +3,7 @@ package sample;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -25,30 +26,42 @@ public class Main extends Application {
         Stage menuStage = new Stage();
         windowMenu = menuStage;
         Button buttonInicio = new Button("Ventana Inicio");
+        buttonInicio.setPrefSize(150,5);
         buttonInicio.setOnAction(event -> window.setScene(sceneInicio));
         Button buttonIniciar = new Button("Iniciar");
+        buttonIniciar.setPrefSize(150,5);
         buttonIniciar.setOnAction(event -> window.setScene(scene1));
         Button button1 = new Button("Dominio");
+        button1.setPrefSize(150,5);
         button1.setOnAction(event -> window.setScene(scene1));
         Button button2 = new Button("Mallado");
+        button2.setPrefSize(150,5);
         button2.setOnAction(event -> window.setScene(scene2));
         Button button3 = new Button("Modelo");
+        button3.setPrefSize(150,5);
         button3.setOnAction(event -> window.setScene(scene3));
         Button button4 = new Button("MEF");
+        button4.setPrefSize(150,5);
         button4.setOnAction(event -> window.setScene(scene4));
-        VBox layoutMenu = new VBox(10);
-        Image imageMenu = new Image(getClass().getResourceAsStream("images/menu.png"));
+        Button button5 = new Button("Ensamblaje");
+        button5.setPrefSize(150,5);
+        button5.setOnAction(event -> window.setScene(scene3));
+        Button button6 = new Button("Condiciones de contorno");
+        button6.setPrefSize(150,5);
+        button6.setOnAction(event -> window.setScene(scene3));
+        VBox layoutMenu = new VBox(8);
+        Image imageMenu = new Image(getClass().getResourceAsStream("images/menu3.png"));
         // new BackgroundSize(width, height, widthAsPercentage, heightAsPercentage, contain, cover)
         BackgroundSize backgroundSize = new BackgroundSize(400, 400, true, true, true, false);
         // new BackgroundImage(image, repeatX, repeatY, position, size)
-        BackgroundImage backgroundImage = new BackgroundImage(imageMenu, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, backgroundSize);
+        BackgroundImage backgroundImage = new BackgroundImage(imageMenu, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, backgroundSize);
         // new Background(images...)
         Background background = new Background(backgroundImage);
-        layoutMenu.getChildren().addAll(buttonInicio, buttonIniciar,button1,button2,button3,button4);
-        layoutMenu.setPadding(new Insets(20,20,0,20));
+        layoutMenu.getChildren().addAll(buttonInicio, buttonIniciar,button1,button2,button3,button4,button5,button6);
+        layoutMenu.setPadding(new Insets(25,20,0,20));
+        layoutMenu.setAlignment(Pos.CENTER);
         layoutMenu.setBackground(new Background(backgroundImage));
-        sceneMenu = new Scene(layoutMenu,200,300);
-
+        sceneMenu = new Scene(layoutMenu,200,310);
         windowMenu.setTitle("Menu");
         windowMenu.setX(70);
         windowMenu.setY(85);
@@ -109,12 +122,21 @@ public class Main extends Application {
         Button buttonAnt4 = new Button("Anterior");
         buttonAnt4.setOnAction(event -> window.setScene(scene3));
         Button buttonSig4 = new Button("Siguiente");
+        //Pasos del MEF
+        Button buttonPaso1 = new Button("1");
+        //buttonPaso1.setOnAction(event -> window.setScene(scene3));
+        Button buttonPaso2 = new Button("2");
+        Button buttonPaso3 = new Button("3");
+        Button buttonPaso4 = new Button("4");
+        Button buttonPaso5 = new Button("5");
+        Button buttonPaso6 = new Button("6");
+
         Image image4 = new Image(getClass().getResourceAsStream("images/MEF.png"));
         ImageView imageView4 = new ImageView(image4);
         imageView4.setFitHeight(400);
         imageView4.setFitWidth(800);
-        HBox h4 = new HBox(670);
-        h4.getChildren().addAll(buttonAnt4,buttonSig4);
+        HBox h4 = new HBox(76);
+        h4.getChildren().addAll(buttonAnt4,buttonPaso1,buttonPaso2,buttonPaso3,buttonPaso4,buttonPaso5,buttonPaso6, buttonSig4);
         VBox layout4 = new VBox(imageView4,h4);
         scene4 = new Scene(layout4, 800, 500);
 
