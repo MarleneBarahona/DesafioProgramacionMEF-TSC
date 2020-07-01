@@ -50,7 +50,7 @@ public class Main extends Application {
         button5.setOnAction(event -> window.setScene(scene5));
         Button button6 = new Button("Ensamblaje");
         button6.setPrefSize(150,5);
-        button6.setOnAction(event -> window.setScene(scene3));
+        button6.setOnAction(event -> window.setScene(scene6));
         Button button7 = new Button("Condiciones de contorno");
         button7.setPrefSize(150,5);
         button7.setOnAction(event -> window.setScene(scene7));
@@ -216,9 +216,30 @@ public class Main extends Application {
         VBox layout5 = new VBox(imageView5,h5);
         scene5 = new Scene(layout5, 800, 500);
 
+        //Ensamblaje
+        Button buttonAnt6=new Button("Anterior");
+        buttonAnt6.setOnAction(event -> window.setScene(scene5));
+        Button buttonSig6 = new Button("Siguiente");
+        buttonSig6.setOnAction(event -> window.setScene(scene7));
+        Media media = new Media(getClass().getResource("/sample/images/Ensamblaje.mp4").toExternalForm());
+        //Instantiating MediaPlayer class
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        //Instantiating MediaView class
+        MediaView mediaView = new MediaView(mediaPlayer);
+        //by setting this property to true, the Video will be played
+        Button playEnsamblaje = new Button("Play");
+        playEnsamblaje.setOnAction(event -> mediaPlayer.setAutoPlay(true));
+        //mediaPlayer.setAutoPlay(true);
+        mediaView.setFitHeight(400);
+        mediaView.setFitWidth(800);
+        HBox h6 = new HBox(150);
+        h6.getChildren().addAll(buttonAnt6,playEnsamblaje,buttonSig6);
+        VBox layout6 = new VBox(mediaView,h6);
+        scene6 = new Scene(layout6, 800, 500);
+
         //Condiciones de contorno
         Button buttonAnt7 = new Button("Anterior");
-        buttonAnt7.setOnAction(event -> window.setScene(scene5));
+        buttonAnt7.setOnAction(event -> window.setScene(scene6));
         Button buttonSig7 = new Button("Finalizar");
         Image image7 = new Image(getClass().getResourceAsStream("images/Diapositiva20.png"));
         ImageView imageView7 = new ImageView(image7);
