@@ -74,7 +74,7 @@ public class Main extends Application {
         windowMenu.setScene(sceneMenu);
 
         //Principal
-        Image imageInicio = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva1.png"));
+        Image imageInicio = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva1.PNG"));
         ImageView imageViewInicio = new ImageView(imageInicio);
         imageViewInicio.setFitHeight(400);
         imageViewInicio.setFitWidth(800);
@@ -87,7 +87,7 @@ public class Main extends Application {
         buttonAnt1.setOnAction(event -> window.setScene(sceneInicio));
         Button buttonSig1 = new Button("Siguiente");
         buttonSig1.setOnAction(event -> window.setScene(scene2));
-        Image image1 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva2.png"));
+        Image image1 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva2.PNG"));
         ImageView imageView1 = new ImageView(image1);
         imageView1.setFitHeight(400);
         imageView1.setFitWidth(800);
@@ -101,7 +101,7 @@ public class Main extends Application {
         buttonAnt2.setOnAction(event -> window.setScene(scene1));
         Button buttonSig2 = new Button("Siguiente");
         buttonSig2.setOnAction(event -> window.setScene(scene3));
-        Image image2 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva3.png"));
+        Image image2 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva3.PNG"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setFitHeight(400);
         imageView2.setFitWidth(800);
@@ -115,7 +115,7 @@ public class Main extends Application {
         buttonAnt3.setOnAction(event -> window.setScene(scene2));
         Button buttonSig3 = new Button("Siguiente");
         buttonSig3.setOnAction(event -> window.setScene(scene4));
-        Image image3 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva4.png"));
+        Image image3 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva4.PNG"));
         ImageView imageView3 = new ImageView(image3);
         imageView3.setFitHeight(400);
         imageView3.setFitWidth(800);
@@ -138,14 +138,14 @@ public class Main extends Application {
         Button buttonPaso6 = new Button("6");
         Button buttonWeak = new Button("W");
         //Cambiar entre los pasos
-        Image imagePaso1 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva5.png"));
-        Image imagePaso2 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva6.png"));
-        Image imagePaso3 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva7.png"));
-        Image imagePaso4 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva8.png"));
-        Image imagePaso5 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva9.png"));
-        Image imagePaso6 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva11.png"));
-        Image imageStrong = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva10.png"));
-        Image imageWeak = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva12.png"));
+        Image imagePaso1 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva5.PNG"));
+        Image imagePaso2 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva6.PNG"));
+        Image imagePaso3 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva7.PNG"));
+        Image imagePaso4 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva8.PNG"));
+        Image imagePaso5 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva9.PNG"));
+        Image imagePaso6 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva11.PNG"));
+        Image imageStrong = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva10.PNG"));
+        Image imageWeak = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva12.PNG"));
         ImageView imageView4 = new ImageView(imagePaso1);
         imageView4.setFitHeight(400);
         imageView4.setFitWidth(800);
@@ -175,13 +175,13 @@ public class Main extends Application {
         Button buttonM = new Button("M");
         Button buttonGyQ = new Button("G y Q");
         //Cambiar entre los componentes
-        Image imageComp1 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva13.png"));
-        Image imageComp2 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva14.png"));
-        Image imageC = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva15.png"));
-        Image imageK = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva16.png"));
-        Image imageF = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva17.png"));
-        Image imageM = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva18.png"));
-        Image imageGyQ = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva19.png"));
+        Image imageComp1 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva13.PNG"));
+        Image imageComp2 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva14.PNG"));
+        Image imageC = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva15.PNG"));
+        Image imageK = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva16.PNG"));
+        Image imageF = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva17.PNG"));
+        Image imageM = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva18.PNG"));
+        Image imageGyQ = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva19.PNG"));
         ImageView imageView5 = new ImageView(imageComp1);
         imageView5.setFitHeight(400);
         imageView5.setFitWidth(800);
@@ -210,8 +210,8 @@ public class Main extends Application {
         //by setting this property to true, the Video will be played
         Button playEnsamblaje = new Button("Play");
         playEnsamblaje.setOnAction(event ->  mediaPlayer.setAutoPlay(true));
-        
-        //mediaPlayer.setAutoPlay(true);
+        Button resetEnsamblaje = new Button("Reset");
+        resetEnsamblaje.setOnAction(event -> mediaPlayer.seek(Duration.millis(0)));
         mediaView.setFitHeight(400);
         mediaView.setFitWidth(755);
         Image imageEnsamblaje = new Image(getClass().getResourceAsStream("/sample/images/ensamblaje.png"));
@@ -219,8 +219,9 @@ public class Main extends Application {
         imageViewEnsamblaje.setFitHeight(400);
         imageViewEnsamblaje.setFitWidth(325);
         HBox hE = new HBox(imageViewEnsamblaje,mediaView);
-        HBox h6 = new HBox(250);
-        h6.getChildren().addAll(buttonAnt6,playEnsamblaje,buttonSig6);
+
+        HBox h6 = new HBox(272);
+        h6.getChildren().addAll(buttonAnt6,playEnsamblaje,resetEnsamblaje,buttonSig6);
         VBox layout6 = new VBox(hE,h6);
         scene6 = new Scene(layout6, 1040, 460);
 
@@ -228,7 +229,7 @@ public class Main extends Application {
         Button buttonAnt7 = new Button("Anterior");
         buttonAnt7.setOnAction(event -> window.setScene(scene6));
         Button buttonSig7 = new Button("Finalizar");
-        Image image7 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva20.png"));
+        Image image7 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva20.PNG"));
         ImageView imageView7 = new ImageView(image7);
         imageView7.setFitHeight(400);
         imageView7.setFitWidth(800);
