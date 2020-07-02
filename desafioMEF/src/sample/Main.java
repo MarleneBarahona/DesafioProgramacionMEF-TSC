@@ -21,7 +21,7 @@ import javafx.util.Duration;
 public class Main extends Application {
 
     Stage window, windowMenu, windowIdk;
-    Scene sceneInicio, sceneMenu, scene1, scene2, scene3, scene4, scene5, scene6, scene7, sceneFinal;
+    Scene sceneInicio, sceneMenu, scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, sceneFinal;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -54,7 +54,10 @@ public class Main extends Application {
         Button button7 = new Button("Condiciones de contorno");
         button7.setPrefSize(150,5);
         button7.setOnAction(event -> window.setScene(scene7));
-        VBox layoutMenu = new VBox(8);
+        Button button8 = new Button("Solucion");
+        button8.setPrefSize(150,5);
+        button8.setOnAction(event -> window.setScene(scene8));
+        VBox layoutMenu = new VBox(6);
         Image imageMenu = new Image(getClass().getResourceAsStream("/sample/images/menu3.png"));
         // new BackgroundSize(width, height, widthAsPercentage, heightAsPercentage, contain, cover)
         BackgroundSize backgroundSize = new BackgroundSize(400, 400, true, true, true, false);
@@ -63,11 +66,11 @@ public class Main extends Application {
         // new Background(images...)
         Background background = new Background(backgroundImage);
 
-        layoutMenu.getChildren().addAll(buttonInicio,button1,button2,button3,button4,button5,button6,button7);
+        layoutMenu.getChildren().addAll(buttonInicio,button1,button2,button3,button4,button5,button6,button7,button8);
         layoutMenu.setPadding(new Insets(25,20,0,20));
         layoutMenu.setAlignment(Pos.CENTER);
         layoutMenu.setBackground(new Background(backgroundImage));
-        sceneMenu = new Scene(layoutMenu,200,315);
+        sceneMenu = new Scene(layoutMenu,200,325);
         windowMenu.setTitle("Menu");
         windowMenu.setX(70);
         windowMenu.setY(85);
@@ -228,7 +231,7 @@ public class Main extends Application {
         Button buttonAnt7 = new Button("Anterior");
         buttonAnt7.setOnAction(event -> window.setScene(scene6));
         //Button buttonCondi = new Button("Demostracion");
-        Button buttonSig7 = new Button("Finalizar");
+        Button buttonSig7 = new Button("Siguiente");
         Media media2 = new Media(getClass().getResource("/sample/videos/Condiciones.mp4").toExternalForm());
         //Instantiating MediaPlayer class
         MediaPlayer mediaPlayer2 = new MediaPlayer(media2);
@@ -245,12 +248,26 @@ public class Main extends Application {
         ImageView imageView7 = new ImageView(image7);
         imageView7.setFitHeight(400);
         imageView7.setFitWidth(330);
-        buttonSig7.setOnAction(event -> window.setScene(sceneFinal));
+        buttonSig7.setOnAction(event -> window.setScene(scene8));
         HBox hC = new HBox(imageView7,mediaView2);
         HBox h7 = new HBox(272);
         h7.getChildren().addAll(buttonAnt7,playCondiciones,resetCondiciones,buttonSig7);
         VBox layout7 = new VBox(hC,h7);
         scene7 = new Scene(layout7, 1040, 460);
+
+        //Solucion
+        Button buttonAnt8 = new Button("Anterior");
+        buttonAnt8.setOnAction(event -> window.setScene(scene7));
+        Button buttonSig8 = new Button("Finalizar");
+        buttonSig8.setOnAction(event -> window.setScene(sceneFinal));
+        Image image8 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva22.PNG"));
+        ImageView imageView8 = new ImageView(image8);
+        imageView8.setFitHeight(400);
+        imageView8.setFitWidth(800);
+        HBox h8 = new HBox(670);
+        h8.getChildren().addAll(buttonAnt8,buttonSig8);
+        VBox layout8 = new VBox(imageView8,h8);
+        scene8 = new Scene(layout8, 800, 460);
 
         //Final
         Image imageFinal = new Image(getClass().getResourceAsStream("/sample/images/Gracias.png"));
