@@ -219,7 +219,6 @@ public class Main extends Application {
         imageViewEnsamblaje.setFitHeight(400);
         imageViewEnsamblaje.setFitWidth(325);
         HBox hE = new HBox(imageViewEnsamblaje,mediaView);
-
         HBox h6 = new HBox(272);
         h6.getChildren().addAll(buttonAnt6,playEnsamblaje,resetEnsamblaje,buttonSig6);
         VBox layout6 = new VBox(hE,h6);
@@ -228,16 +227,30 @@ public class Main extends Application {
         //Condiciones de contorno
         Button buttonAnt7 = new Button("Anterior");
         buttonAnt7.setOnAction(event -> window.setScene(scene6));
+        //Button buttonCondi = new Button("Demostracion");
         Button buttonSig7 = new Button("Finalizar");
-        Image image7 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva20.PNG"));
+        Media media2 = new Media(getClass().getResource("/sample/videos/Condiciones.mp4").toExternalForm());
+        //Instantiating MediaPlayer class
+        MediaPlayer mediaPlayer2 = new MediaPlayer(media2);
+        //Instantiating MediaView class
+        MediaView mediaView2 = new MediaView(mediaPlayer2);
+        //by setting this property to true, the Video will be played
+        Button playCondiciones = new Button("Play");
+        playCondiciones.setOnAction(event ->  mediaPlayer2.setAutoPlay(true));
+        Button resetCondiciones = new Button("Reset");
+        resetCondiciones.setOnAction(event -> mediaPlayer2.seek(Duration.millis(0)));
+        mediaView2.setFitHeight(400);
+        mediaView2.setFitWidth(750);
+        Image image7 = new Image(getClass().getResourceAsStream("/sample/images/Diapositiva21.PNG"));
         ImageView imageView7 = new ImageView(image7);
         imageView7.setFitHeight(400);
-        imageView7.setFitWidth(800);
+        imageView7.setFitWidth(330);
         buttonSig7.setOnAction(event -> window.setScene(sceneFinal));
-        HBox h7 = new HBox(670);
-        h7.getChildren().addAll(buttonAnt7,buttonSig7);
-        VBox layout7 = new VBox(imageView7,h7);
-        scene7 = new Scene(layout7, 800, 460);
+        HBox hC = new HBox(imageView7,mediaView2);
+        HBox h7 = new HBox(272);
+        h7.getChildren().addAll(buttonAnt7,playCondiciones,resetCondiciones,buttonSig7);
+        VBox layout7 = new VBox(hC,h7);
+        scene7 = new Scene(layout7, 1040, 460);
 
         //Final
         Image imageFinal = new Image(getClass().getResourceAsStream("/sample/images/Gracias.png"));
